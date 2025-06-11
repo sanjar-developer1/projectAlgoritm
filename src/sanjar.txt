@@ -1,3 +1,4 @@
-Salom mening ismim Sanjarbek 
-Men algortim saydini mediasi bilan tugatdim meni bu textni yozsihdan maqsadim bu estalik bo'lin qolishini hohlayman
-men bu sayd 6/0.6/2025 sanaqa qilib tugatdim
+Men algortim saytini mediasi bilan tugatdim meni bu textni yozishdan maqsadim bu estalik bo'lin qolishini hohlayman
+men bu sayt 6/0.6/2025 sanada qilib tugatdim.
+
+Lekin unga 29/0.7/2025 da bunga juda katta o'zgarish qilganman ko'proq functionlar qo'shdim.
