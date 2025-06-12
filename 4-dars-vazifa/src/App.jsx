@@ -5,6 +5,7 @@ import begzod from "./assets/begzod.png";
 import box1Img from "./assets/box1-left.svg";
 import box1IMg from "./assets/box1-right.svg";
 import box2Bttom from "./assets/box2-bottom.svg";
+import REACT from "./assets/react.jpg";
 
 function App() {
   return (
@@ -111,6 +112,64 @@ function App() {
           </div>
         </div>
       </header>
+      <div className="about">
+        <div className="about-top">
+          <hr />
+          <h2>Kurslar</h2>
+          <p>Standart - Haftada 3 kun 2 soat dars</p>
+          <span>Bootcamp - Haftada 5 kun 3-4 soat dars</span>
+          <select name="Yo'nalish" id="Yo'nalish">
+            <option value="dasturlash">Dasturlash</option>
+            <option value="dizayn">Dizayn</option>
+          </select>
+        </div>
+        <div className="about-center">
+          <div className="about-box">
+            <img src={REACT} alt="" />
+            <div className="about-box-card">
+              <p>Frontend - React JS</p>
+              <span>Davomiyligi - 8 oy</span>
+              <div className="about-box-card-btn">
+                <button className="dasturlash">Dasturlash</button>
+                <button className="organish">O'rganish</button>
+              </div>
+            </div>
+          </div>
+          <div className="about-box">
+            <img src={REACT} alt="" />
+            <div className="about-box-card">
+              <p>Frontend - React JS</p>
+              <span>Davomiyligi - 8 oy</span>
+              <div className="about-box-card-btn">
+                <button className="dasturlash">Dasturlash</button>
+                <button className="organish">O'rganish</button>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="about-box">
+            <img src={REACT} alt="" />
+            <div className="about-box-card">
+              <p>Frontend - React JS</p>
+              <span>Davomiyligi - 8 oy</span>
+              <div className="about-box-card-btn">
+                <button className="dasturlash">Dasturlash</button>
+                <button className="organish">O'rganish</button>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="about-box">
+            <img src={REACT} alt="" />
+            <div className="about-box-card">
+              <p>Frontend - React JS</p>
+              <span>Davomiyligi - 8 oy</span>
+              <div className="about-box-card-btn">
+                <button className="dasturlash">Dasturlash</button>
+                <button className="organish">O'rganish</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
