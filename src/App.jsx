@@ -199,7 +199,7 @@ function App() {
             </div>
           </div>
           <div className="about-box">
-            <img src={REACT} alt="" />
+            <img src={REACT} alt="bu yerda react ni logosi bor" />
             <div className="about-box-card">
               <p lang="uz" hidden={false}>
                 {t("frontend")}
