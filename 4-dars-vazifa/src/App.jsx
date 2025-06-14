@@ -6,6 +6,11 @@ import box1Img from "./assets/box1-left.svg";
 import box1IMg from "./assets/box1-right.svg";
 import box2Bttom from "./assets/box2-bottom.svg";
 import REACT from "./assets/react.jpg";
+import Afzal from "./assets/afzallik.svg";
+import Afzal2 from "./assets/afzal2.svg";
+import Afzal3 from "./assets/afzal3.svg";
+import Afzal4 from "./assets/afzal4.svg";
+import peopele from "./assets/people.png";
 
 function App() {
   return (
@@ -168,6 +173,80 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="afzallik">
+        <div className="afzallik-top">
+          <hr />
+          <p>Nima uchun Algoritmda o‘qish kerak?</p>
+        </div>
+        <div className="afzallik-center">
+          <div className="afzallik-center-box">
+            <div className="afzallik-center-box-card">
+              <h3>Doimiy musobaqalar</h3>
+              <p>
+                Dasturlash, dizayn sohalari bo‘yicha haftalik sovrinli
+                musobaqalar.
+              </p>
+            </div>
+            <div className="afzal">
+              <img src={Afzal} alt="" />
+            </div>
+          </div>
+          <div className="afzallik-center-box">
+            <div className="afzallik-center-box-card">
+              <h3>Ish taklif qilish kafolati </h3>
+              <p>
+                Algoritm kurslarni muvaffaqiyatli bitirgan o‘quvchilarga ish
+                taklif qilish kafolatini beradi.
+              </p>
+            </div>
+            <div className="afzal">
+              <img src={Afzal2} alt="" />
+            </div>
+          </div>
+          <div className="afzallik-center-box">
+            <div className="afzallik-center-box-card">
+              <h3>Sifatli ta'lim</h3>
+              <p>
+                Doimiy yangilanib boradigan kurslar va katta tajribaga ega
+                ustozlar.
+              </p>
+            </div>
+            <div className="afzal">
+              <img src={Afzal3} alt="" />
+            </div>
+          </div>
+          <div className="afzallik-center-box">
+            <div className="afzallik-center-box-card">
+              <h3>Sertifikat</h3>
+              <p>
+                Kursni muvaffaqiyatli tamomlagan o‘quvchilar Algoritmning
+                sertifikatiga ega bo‘ladi.
+              </p>
+            </div>
+            <div className="afzal">
+              <img src={Afzal4} alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="feedback">
+          <div className="feedback-top">
+            <hr />
+            <p>O'quvchilar fikrlari</p>
+          </div>
+          {/* <div className="feedback-center">
+            <div className="people">
+              <img src={begzod} alt="bu yerda rasm bor" loading="lazy" />
+              <div className="people-bottom">
+                <img src={peopele} alt="bu yerda rasm bor" loading="lazy" />
+                <div className="people-bottom-personal">
+                  <h3>Alixon</h3>
+                  <p>Frontend o'quvchisi</p>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </div>
       </div>
     </>
