@@ -1,4 +1,5 @@
 import "./App.css";
+import people from "./people";
 import logo from "./assets/logo.svg";
 import navRight from "./assets/nav-right.svg";
 import begzod from "./assets/begzod.png";
@@ -10,8 +11,8 @@ import Afzal from "./assets/afzallik.svg";
 import Afzal2 from "./assets/afzal2.svg";
 import Afzal3 from "./assets/afzal3.svg";
 import Afzal4 from "./assets/afzal4.svg";
-import peopele from "./assets/people.png";
-
+import videoPlay from "./assets/video-play.svg";
+import videoCircle from "./assets/video-circle.svg";
 function App() {
   return (
     <>
@@ -230,23 +231,78 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="feedback">
-          <div className="feedback-top">
-            <hr />
-            <p>O'quvchilar fikrlari</p>
-          </div>
-          {/* <div className="feedback-center">
-            <div className="people">
-              <img src={begzod} alt="bu yerda rasm bor" loading="lazy" />
+      </div>
+
+      <div className="feedback">
+        <div className="feedback-top">
+          <hr />
+          <p>O'quvchilar fikrlari</p>
+        </div>
+        <div className="feedback-center">
+          {people.map((person, index) => (
+            <div className="people" key={index}>
+              <div className="pepople-center">
+                <img
+                  src={videoPlay}
+                  alt="bu yerda rasm bor"
+                  loading="lazy"
+                  style={{
+                    width: "calc(40 / 14.4 * 1vw)",
+                    height: "calc(40 / 14.4 * 1vw)",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
               <div className="people-bottom">
-                <img src={peopele} alt="bu yerda rasm bor" loading="lazy" />
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  loading="lazy"
+                  style={{
+                    width: "calc(67 / 14.4 * 1vw)",
+                    height: "calc(67 / 14.4 * 1vw)",
+                    objectFit: "cover",
+                    borderRadius: "50%",
+                  }}
+                />
                 <div className="people-bottom-personal">
-                  <h3>Alixon</h3>
-                  <p>Frontend o'quvchisi</p>
+                  <h3>{person.name}</h3>
+                  <p>{person.role}</p>
                 </div>
+                <img
+                  src={videoCircle}
+                  alt="bu yerda rasm bor"
+                  loading="lazy"
+                  style={{
+                    width: "calc(40 / 14.4 * 1vw)",
+                    height: "calc(40 / 14.4 * 1vw)",
+                    objectFit: "cover",
+                  }}
+                />
               </div>
             </div>
-          </div> */}
+          ))}
+        </div>
+
+        <div className="feedback-bottom">
+          {people.map((item) => (
+            <div className="people-bottom-wrapper">
+              <p>{item.comment}</p>
+              <div className="people-bottom">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  loading="lazy"
+                  style={{
+                    width: "calc(67 / 14.4 * 1vw)",
+                    height: "calc(67 / 14.4 * 1vw)",
+                    objectFit: "cover",
+                    borderRadius: "50%",
+                  }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

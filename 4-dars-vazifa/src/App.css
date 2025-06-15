@@ -459,6 +459,15 @@ option {
   border-radius: calc(10 / 14.4 * 1vw);
   border: none;
 }
+select {
+  appearance: none; /* Chrome, Safari */
+  -webkit-appearance: none; /* iOS */
+  -moz-appearance: none; /* Firefox */
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: right calc(10 / 14.4 * 1vw) center;
+  background-size: calc(16 / 14.4 * 1vw);
+}
 
 .about-top select > option {
   option {
@@ -611,8 +620,9 @@ option {
 
 .feedback {
   display: flex;
-  align-items: center;
-  justify-content: left;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
   margin-top: calc(45 / 14.4 * 1vw);
 }
 .feedback-top {
@@ -635,4 +645,71 @@ option {
   line-height: calc(58 / 14.4 * 1vw);
   letter-spacing: 0%;
   margin-left: calc(17 / 14.4 * 1vw);
+}
+
+.people {
+  height: calc(602 / 14.4 * 1vw);
+  background-color: #0d0d0d;
+  border-radius: calc(10 / 14.4 * 1vw);
+  padding: calc(30 / 14.4 * 1vw) calc(30 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feedback-center {
+  display: flex;
+  gap: calc(25 / 14.4 * 1vw);
+  overflow-x: scroll;
+  margin-top: calc(30 / 14.4 * 1vw);
+}
+
+.people-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.people-bottom-personal h3 {
+  font-family: Nohemi;
+  font-weight: 600;
+  font-size: calc(30 / 14.4 * 1vw);
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.people-bottom-personal p {
+  font-family: Nohemi;
+  font-weight: 400;
+  font-size: calc(10 / 14.4 * 1vw);
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.people-bottom-personal {
+  padding-left: calc(20 / 14.4 * 1vw);
+  padding-right: calc(59 / 14.4 * 1vw);
+}
+.pepople-center {
+  width: 100%;
+  height: calc(472 / 14.4 * 1vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-bottom {
+  border: 2px solid green;
+  margin-top: calc(88 / 14.4 * 1vw);
+  display: flex;
+  overflow-x: scroll;
+  column-gap: calc(25 / 14.4 * 1vw);
+}
+
+.people-bottom-wrapper {
+  border: 2px solid red;
+  display: flex;
+  width: calc(478 / 14.4 * 1vw);
+  height: calc(304 / 14.4 * 1vw);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
