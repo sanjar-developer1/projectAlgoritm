@@ -367,9 +367,10 @@ function App() {
         <div className="feedback-bottom">
           {people.map((item) => (
             <div className="people-bottom-wrapper">
-              <p lang="uz" hidden={false}>
+              <p lang="uz" hidden={false} className="people-bottom-wrapper-p">
                 {item.comment}
               </p>
+              <span>{item.comment}</span>
               <div className="people-bottom">
                 <img
                   src={item.image}
