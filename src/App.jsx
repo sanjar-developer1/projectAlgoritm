@@ -15,7 +15,7 @@ import videoPlay from "./assets/video-play.svg";
 import videoCircle from "./assets/video-circle.svg";
 import arrowDown from "./assets/arrow-down.svg";
 import manzil from "./assets/manzil.png";
-import vektor from "./assets/vector.svg";
+import vektor from "./assets/Vector.svg";
 import telefon from "./assets/telefon.svg";
 import telegram from "./assets/telegram.svg";
 import youtube from "./assets/youtube.svg";
