@@ -129,7 +129,7 @@ function App() {
                 className="box2Bttom"
               />
               <p lang="uz" hidden={false}>
-                {t("peronal")}
+                {t("personal")}
               </p>
             </div>
           </div>
