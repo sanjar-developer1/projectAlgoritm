@@ -2,7 +2,6 @@ import "./App.css";
 import people from "./people";
 import logo from "./assets/logo.svg";
 import navRight from "./assets/nav-right.svg";
-import begzod from "./assets/begzod.png";
 import box1Img from "./assets/box1-left.svg";
 import box1IMg from "./assets/box1-right.svg";
 import box2Bttom from "./assets/box2-bottom.svg";
@@ -22,7 +21,21 @@ import youtube from "./assets/youtube.svg";
 import facebook from "./assets/facebook.svg";
 import instagram from "./assets/instagram.svg";
 
+// caruselMenu
+import CaruselMenu from "./carusleMenu";
+
+// language
+import "./i18n.js";
+import { useTranslation } from "react-i18next";
+
 function App() {
+  const { t, i18n } = useTranslation();
+
+  const handleLang = () => {
+    const newLang = i18n.language === "uz" ? "en" : "uz";
+    i18n.changeLanguage(newLang);
+    console.log("salom");
+  };
   return (
     <>
       <nav>
@@ -31,40 +44,21 @@ function App() {
           <a href="#">ALGORITM</a>
         </div>
         <ul>
-          <li>Bosh sahifa</li>
-          <li>Kurslar</li>
-          <li>Eventlar</li>
-          <li>Biz haqimizda</li>
-          <li>Yangiliklar</li>
-          <li>Sertifikatlar</li>
-          <li>Aloqa markazi</li>
+          <li>{t("home")}</li>
+          <li>{t("courses")}</li>
+          <li>{t("event")}</li>
+          <li>{t("about")}</li>
+          <li>{t("news")}</li>
+          <li>{t("certificates")}</li>
+          <li>{t("contactCenter")}</li>
         </ul>
-        <div className="nav-right">
+        <div className="nav-right" onClick={handleLang}>
           <img src={navRight} alt="bu yerda rasm bor" loading="lazy" />
         </div>
       </nav>
       <header>
         <div className="header">
-          <div className="header-left">
-            <h2>Ustozidan o‘zib ketgan shogird</h2>
-            <p lang="uz" hidden={false}>
-              Men Bekzod, 13 yoshdaman. Dasturlashga qiziqaman va hozirda
-              Node.js (Express), PostgreSQL, va React PWA bilan ishlayman.
-              Asosan authentication va authorization (JWT, access token, refresh
-              token) kabi xavfsizlik tizimlari ustida ishlayman.
-            </p>
-
-            <span title="Qo‘shimcha info" aria-hidden="true">
-              Doim yangi texnologiyalarni o‘rganishga intilaman va loyihalarimni
-              takomillashtirishga harakat qilaman.
-            </span>
-          </div>
-          <div className="header-right">
-            <img src={begzod} alt="bu yerda rasm bor" loading="lazy" />
-            <p lang="uz" hidden={false}>
-              Begzod
-            </p>
-          </div>
+          <CaruselMenu />
         </div>
         <div className="hero">
           <div className="hero-box box1">
@@ -76,7 +70,7 @@ function App() {
               >
                 Algoritm
               </span>{" "}
-              natijasi raqamlarda
+              {t("result")}
             </p>
             <div className="boxxxx">
               <div className="box1-left">
@@ -90,7 +84,7 @@ function App() {
                     aria-hidden="true"
                     className="box1-span"
                   >
-                    Shu kungacha bitirgan o‘quvchilar
+                    {t("graduated")}
                   </span>
                 </div>
               </div>
@@ -98,14 +92,14 @@ function App() {
                 <img src={box1IMg} alt="bu yerda rasm bor" loading="lazy" />
                 <div className="box1-right-div">
                   <p lang="uz" hidden={false} className="box1-p">
-                    400 dona
+                    400{t("piece")}
                   </p>
                   <span
                     title="Qo‘shimcha info"
                     aria-hidden="true"
                     className="box1-span"
                   >
-                    Shu kungacha o‘quvchilarning ishga joylashishi
+                    {t("work")}
                   </span>
                 </div>
               </div>
@@ -113,17 +107,16 @@ function App() {
           </div>
           <div className="hero-box box2">
             <p style={{ color: "yellow" }} lang="uz" hidden={false}>
-              Bepul konsultatsiya
+              {t("free")}
             </p>
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Telefon raqamingizni yozib qoldiring, biz sizga qo‘ngiroq qilamiz
-              va birorta ham savolingiz javobsiz qolmasligiga harakat qilamiz
+              {t("phone")}
             </span>
-            <input type="text" placeholder="Ismingiz" />
-            <input type="text" placeholder="Qanday kasb egallamoqchisiz?" />
+            <input type="text" placeholder={t("name")} />
+            <input type="text" placeholder={"profession"} />
             <div className="box2-div">
               <input type="number" placeholder="+998" />
-              <button>Yuborish</button>
+              <button>{t("submit")}</button>
             </div>
             <div className="box2-bottom">
               <img
@@ -133,24 +126,23 @@ function App() {
                 className="box2Bttom"
               />
               <p lang="uz" hidden={false}>
-                Shaxsiy ma'lumotlarni qayta ishlanishiga roziman
+                {t("peronal")}
               </p>
             </div>
           </div>
           <div className="hero-box box3">
             <hr />
             <p lang="uz" hidden={false}>
-              6 oy tajribaga ega bitiruvchilar odatda o‘rtacha shuncha maosh
-              oladi.
+              {t("6month")}
             </p>
             <p lang="uz" hidden={false}>
-              Dasturlash
+              {t("web")}
             </p>
             <p lang="uz" hidden={false}>
               $321
             </p>
             <p lang="uz" hidden={false}>
-              Dizayn
+              {t("smm")}
             </p>
             <p lang="uz" hidden={false}>
               $400
@@ -158,16 +150,16 @@ function App() {
           </div>
           <div className="hero-box box4">
             <p lang="uz" hidden={false}>
-              Per month Hackathon’s{" "}
+              {t("hakaton")}
             </p>
             <p lang="uz" hidden={false}>
-              Hackatonga ro‘yxatdan o‘ting!
+              {t("hakaton2")}
             </p>
             <p lang="uz" hidden={false}>
-              Chegirmalar
+              {t("discounts")}
             </p>
             <p lang="uz" hidden={false}>
-              Nimadurla
+              {t("nimadur")}
             </p>
           </div>
         </div>
@@ -175,16 +167,16 @@ function App() {
       <div className="about">
         <div className="about-top">
           <hr />
-          <h2>Kurslar</h2>
+          <h2>{t("courses")}</h2>
           <p lang="uz" hidden={false}>
-            Standart - Haftada 3 kun 2 soat dars
+            {t("standart")}
           </p>
           <span title="Qo‘shimcha info" aria-hidden="true">
-            Bootcamp - Haftada 5 kun 3-4 soat dars
+            {t("bootcamp")}
           </span>
           <select name="Yo'nalish" id="Yo'nalish">
-            <option value="dasturlash">Dasturlash</option>
-            <option value="dizayn">Dizayn</option>
+            <option value="dasturlash">{t("web")}</option>
+            <option value="dizayn">{t("smm")}</option>
           </select>
         </div>
         <div className="about-center">
@@ -192,14 +184,14 @@ function App() {
             <img src={REACT} alt="" />
             <div className="about-box-card">
               <p lang="uz" hidden={false}>
-                Frontend - React JS
+                {t("frontend")}
               </p>
               <span title="Qo‘shimcha info" aria-hidden="true">
-                Davomiyligi - 8 oy
+                {t("davom")}
               </span>
               <div className="about-box-card-btn">
-                <button className="dasturlash">Dasturlash</button>
-                <button className="organish">O'rganish</button>
+                <button className="dasturlash">{t("web")}</button>
+                <button className="organish">{t("organ")}</button>
               </div>
             </div>
           </div>
@@ -207,14 +199,14 @@ function App() {
             <img src={REACT} alt="" />
             <div className="about-box-card">
               <p lang="uz" hidden={false}>
-                Frontend - React JS
+                {t("frontend")}
               </p>
               <span title="Qo‘shimcha info" aria-hidden="true">
-                Davomiyligi - 8 oy
+                {t("davom")}
               </span>
               <div className="about-box-card-btn">
-                <button className="dasturlash">Dasturlash</button>
-                <button className="organish">O'rganish</button>
+                <button className="dasturlash">{t("web")}</button>
+                <button className="organish">{t("organ")}</button>
               </div>
             </div>
           </div>{" "}
@@ -222,14 +214,14 @@ function App() {
             <img src={REACT} alt="" />
             <div className="about-box-card">
               <p lang="uz" hidden={false}>
-                Frontend - React JS
+                {t("backend")}
               </p>
               <span title="Qo‘shimcha info" aria-hidden="true">
-                Davomiyligi - 8 oy
+                {t("davom")}
               </span>
               <div className="about-box-card-btn">
-                <button className="dasturlash">Dasturlash</button>
-                <button className="organish">O'rganish</button>
+                <button className="dasturlash">{t("web")}</button>
+                <button className="organish">{t("organ")}</button>
               </div>
             </div>
           </div>{" "}
@@ -237,14 +229,14 @@ function App() {
             <img src={REACT} alt="" />
             <div className="about-box-card">
               <p lang="uz" hidden={false}>
-                Frontend - React JS
+                {t("graphis")}
               </p>
               <span title="Qo‘shimcha info" aria-hidden="true">
-                Davomiyligi - 8 oy
+                {t("davom")}
               </span>
               <div className="about-box-card-btn">
-                <button className="dasturlash">Dasturlash</button>
-                <button className="organish">O'rganish</button>
+                <button className="dasturlash">{t("web")}</button>
+                <button className="organish">{t("organ")}</button>
               </div>
             </div>
           </div>
@@ -254,16 +246,15 @@ function App() {
         <div className="afzallik-top">
           <hr />
           <p lang="uz" hidden={false}>
-            Nima uchun Algoritmda o‘qish kerak?
+            {t("algoritm")}
           </p>
         </div>
         <div className="afzallik-center">
           <div className="afzallik-center-box">
             <div className="afzallik-center-box-card">
-              <h3>Doimiy musobaqalar</h3>
+              <h3>{t("musobaqa")}</h3>
               <p lang="uz" hidden={false}>
-                Dasturlash, dizayn sohalari bo‘yicha haftalik sovrinli
-                musobaqalar.
+                {t("dasturlash")}
               </p>
             </div>
             <div className="afzal">
@@ -272,10 +263,9 @@ function App() {
           </div>
           <div className="afzallik-center-box">
             <div className="afzallik-center-box-card">
-              <h3>Ish taklif qilish kafolati </h3>
+              <h3>{t("guarantee")}</h3>
               <p lang="uz" hidden={false}>
-                Algoritm kurslarni muvaffaqiyatli bitirgan o‘quvchilarga ish
-                taklif qilish kafolatini beradi.
+                {t("algoritmkurs")}
               </p>
             </div>
             <div className="afzal">
@@ -284,10 +274,9 @@ function App() {
           </div>
           <div className="afzallik-center-box">
             <div className="afzallik-center-box-card">
-              <h3>Sifatli ta'lim</h3>
+              <h3>{t("talim")}</h3>
               <p lang="uz" hidden={false}>
-                Doimiy yangilanib boradigan kurslar va katta tajribaga ega
-                ustozlar.
+                {t("doimiy")}
               </p>
             </div>
             <div className="afzal">
@@ -296,10 +285,9 @@ function App() {
           </div>
           <div className="afzallik-center-box">
             <div className="afzallik-center-box-card">
-              <h3>Sertifikat</h3>
+              <h3>{t("sertif")}</h3>
               <p lang="uz" hidden={false}>
-                Kursni muvaffaqiyatli tamomlagan o‘quvchilar Algoritmning
-                sertifikatiga ega bo‘ladi.
+                {t("sertifikat")}
               </p>
             </div>
             <div className="afzal">
@@ -312,7 +300,7 @@ function App() {
         <div className="feedback-top">
           <hr />
           <p lang="uz" hidden={false}>
-            O'quvchilar fikrlari
+            {t("oquv")}
           </p>
         </div>
 
@@ -398,28 +386,24 @@ function App() {
         <div className="yoziling-top">
           <hr />
           <div className="yoziling-top-p">
-            <p>Yaqin orada ochiladigan kurslarimizga yoziling</p>
+            <p>{t("yaqin")}</p>
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Har bir kurs boshlanishdan oldin tanishtiruv dars bo‘lib o‘tadi.
-              Unda siz kurs bo‘yicha barcha ma‘lumotlarga ega bo‘lasiz,
-              o‘qituvchi bilan tanishib olasiz va kursga yozilishingiz mumkin.
+              {t("har")}
             </span>
           </div>
         </div>
         <div className="yoziling-center">
           <div className="yoziling-center-left">
             <select name="kasb" id="kasb">
-              <option value="Qanday kasb egallamoqchisiz?">
-                Qanday kasb egallamoqchisiz?
-              </option>
-              <option value="Dasturchilik">Dasturchilik</option>
-              <option value="Dizaynerlik">Dizaynerlik</option>
-              <option value="Xafsizlik">Xafsizlik</option>
-              <option value="Intelekt">Intelekt</option>
+              <option value="Qanday kasb egallamoqchisiz?">{t("kasb")}</option>
+              <option value="Dasturchilik">{t("web")}</option>
+              <option value="Dizaynerlik">{t("smm")}</option>
+              <option value="Xafsizlik">{t("kiber")}</option>
+              <option value="Intelekt">{t("intellekt")}</option>
             </select>
             <div className="yoziling-center-left1">
               <p lang="uz" hidden={false}>
-                Guruh boshlanadigan sana tanlash
+                {t("guruh")}
               </p>
               <hr className="hr" />
               <div className="yoziling-center-left1-bottom">
@@ -442,7 +426,7 @@ function App() {
             </div>
             <div className="yoziling-center-left2">
               <p lang="uz" hidden={false}>
-                Guruh boshlanadigan vaqt tanlash
+                {t("vaqt")}
               </p>
               <hr className="hr" />
               <div className="yoziling-center-left2-bottom">
@@ -466,11 +450,11 @@ function App() {
           </div>
           <div className="yoziling-center-right">
             <p lang="uz" hidden={false}>
-              Ro‘yxatdan o‘tish uchun formani to‘ldiring
+              {t("royxat")}
             </p>
             <input
               type="text"
-              placeholder="Ismingiz"
+              placeholder={t("name")}
               className="center-right-input"
             />
             <div className="yoziling-center-right-btn">
@@ -480,7 +464,7 @@ function App() {
                 disabled
                 aria-label="Tugma"
               >
-                +998 69 404 34 34
+                +998 00 000 00 00
               </button>
               <button
                 className="yuborish-btn"
@@ -488,13 +472,13 @@ function App() {
                 disabled
                 aria-label="Tugma"
               >
-                Yuborish
+                {t("submit")}
               </button>
             </div>
             <div className="yoziling-center-right-p">
               <img src={box2Bttom} alt="Bu yerda rasm bor" />
               <p lang="uz" hidden={false}>
-                Shaxsiy ma'lumotlarni qayta ishlanishiga roziman
+                {t("personal")}
               </p>
             </div>
           </div>
@@ -504,60 +488,56 @@ function App() {
         <div className="savollar-top">
           <hr />
           <p lang="uz" hidden={false}>
-            Ko‘p Beriladigan Savollar!
+            {t("savol")}
           </p>
         </div>
         <div className="savollar-center">
           <div className="savollar-center-card">
             <div className="savollar-center-card-top">
               <p lang="uz" hidden={false}>
-                Kurslar bepulmi?
+                {t("kurs")}
               </p>
               <img src={arrowDown} alt="Bu yerda rasm bor" />
             </div>
             <hr />
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Yo’q, hozir barcha kurslar pullik. Narxlarni har bir kursning
-              sahifasida ko’rishingiz mumkin.
+              {t("yoq")}
             </span>
           </div>
           <div className="savollar-center-card">
             <div className="savollar-center-card-top">
               <p lang="uz" hidden={false}>
-                Kurslar bepulmi?
+                {t("kurs")}
               </p>
               <img src={arrowDown} alt="Bu yerda rasm bor" />
             </div>
             <hr />
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Yo’q, hozir barcha kurslar pullik. Narxlarni har bir kursning
-              sahifasida ko’rishingiz mumkin.
+              {t("yoq")}
             </span>
           </div>
           <div className="savollar-center-card">
             <div className="savollar-center-card-top">
               <p lang="uz" hidden={false}>
-                Kurslar bepulmi?
+                {t("kurs")}
               </p>
               <img src={arrowDown} alt="Bu yerda rasm bor" />
             </div>
             <hr />
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Yo’q, hozir barcha kurslar pullik. Narxlarni har bir kursning
-              sahifasida ko’rishingiz mumkin.
+              {t("yoq")}
             </span>
           </div>{" "}
           <div className="savollar-center-card">
             <div className="savollar-center-card-top">
               <p lang="uz" hidden={false}>
-                Kurslar bepulmi?
+                {t("kurs")}
               </p>
               <img src={arrowDown} alt="Bu yerda rasm bor" />
             </div>
             <hr />
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Yo’q, hozir barcha kurslar pullik. Narxlarni har bir kursning
-              sahifasida ko’rishingiz mumkin.
+              {t("yoq")}
             </span>
           </div>
         </div>
@@ -566,7 +546,7 @@ function App() {
         <div className="manzil-top">
           <hr />
           <p lang="uz" hidden={false}>
-            Bizning manzillar
+            {t("manzil")}
           </p>
         </div>
         <div className="manzil-wrapper">
@@ -575,19 +555,19 @@ function App() {
           </div>
           <div className="manzil-right">
             <p lang="uz" hidden={false}>
-              Bepul konsultatsiya
+              {t("konsul")}
+              {/* shu yerdan faqat uzbek tilida yozildi */}
             </p>
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Telefon raqamingizni yozib qoldiring, biz sizga qo‘ngiroq qilamiz
-              va birorta ham savolingiz javobsiz qolmasligiga harakat qilamiz
+              {t("telfonraqam")}
             </span>
-            <input type="text" placeholder="Ismingiz" />
+            <input type="text" placeholder={t("name")} />
             <select name="kasb" id="kasb">
-              <option value="">Qanday kasb egallamoqchisiz?</option>
-              <option value="Dasturchilik">Dasturchilik</option>
-              <option value="Dizaynerlik">Dizaynerlik</option>
-              <option value="Kiberxavfsizlik">Kiberxavfsizlik</option>
-              <option value="Marketing">Marketing</option>
+              <option value="">{t("qandayKasb")}</option>
+              <option value="Dasturchilik">{t("web")}</option>
+              <option value="Dizaynerlik">{t("smm")}</option>
+              <option value="Kiberxavfsizlik">{t("kiber")}</option>
+              <option value="Marketing">{t("marketing")}</option>
             </select>
             <div className="manzil-right-btn">
               <button className="tel" type="button" disabled aria-label="Tugma">
@@ -599,7 +579,7 @@ function App() {
                 disabled
                 aria-label="Tugma"
               >
-                Yuborish
+                {t("submit")}
               </button>
             </div>
             <div className="manzil-right-bottom">
@@ -610,7 +590,7 @@ function App() {
                 className="box2Bttom"
               />
               <p lang="uz" hidden={false}>
-                Shaxsiy ma'lumotlarni qayta ishlanishiga roziman
+                {t("personal")}
               </p>
             </div>
           </div>
@@ -619,7 +599,7 @@ function App() {
           <h2>Namangan shahar,DXA 2-qavat</h2>
           <div className="manzil-bottom-card1">
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Ish vaqti
+              {t("worktime")}
             </span>
             <p lang="uz" hidden={false}>
               09:00 dan 19:00 gacha
@@ -627,10 +607,10 @@ function App() {
           </div>
           <div className="manzil-bottom-card2">
             <span title="Qo‘shimcha info" aria-hidden="true">
-              Aloqa uchun
+              {t("aloqa")}
             </span>
             <p lang="uz" hidden={false}>
-              90-694-87-17
+              00-000-00-00
             </p>
           </div>
         </div>
@@ -647,27 +627,27 @@ function App() {
           <div className="footer-center">
             <div className="footer-center-card">
               <p lang="uz" hidden={false}>
-                Bosh sahifa
+                {t("home")}
               </p>
               <p lang="uz" hidden={false}>
-                Kurslar
+                {t("courses")}
               </p>
               <p lang="uz" hidden={false}>
-                Eventlar
+                {t("event")}
               </p>
               <p lang="uz" hidden={false}>
-                Aloqa markazi
+                {t("contactCenter")}
               </p>
             </div>
             <div className="footer-center-card2">
               <p lang="uz" hidden={false}>
-                Biz haqimizda
+                {t("about")}
               </p>
               <p lang="uz" hidden={false}>
-                Yangiliklar
+                {t("news")}
               </p>
               <p lang="uz" hidden={false}>
-                Sertifikatlar
+                {t("certificates")}
               </p>
               <p lang="uz" hidden={false}>
                 FAQ
@@ -684,7 +664,7 @@ function App() {
               <img src={telefon} alt="bu yerda rasm bor" loading="lazy" />
             </div>
             <p lang="uz" hidden={false}>
-              95-200-43-04
+              90-000-00-00
             </p>
           </div>
           <div className="footer-right-bottom">
