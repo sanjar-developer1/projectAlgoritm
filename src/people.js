@@ -1,4 +1,4 @@
-import img from "./assets/people.png"
+import img from "./assets/profil.jpg"
 
 
 const people = [

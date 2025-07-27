@@ -1,5 +1,6 @@
 import "./App.css";
 import people from "./people";
+import sanjar from "./assets/profil.jpg";
 import logo from "./assets/logo.svg";
 import navRight from "./assets/nav-right.svg";
 import box1Img from "./assets/box1-left.svg";
@@ -43,17 +44,19 @@ function App() {
           <img src={logo} alt="bu logo" loading="lazy" />
           <a href="#">ALGORITM</a>
         </div>
-        <ul>
-          <li>{t("home")}</li>
-          <li>{t("courses")}</li>
-          <li>{t("event")}</li>
-          <li>{t("about")}</li>
-          <li>{t("news")}</li>
-          <li>{t("certificates")}</li>
-          <li>{t("contactCenter")}</li>
-        </ul>
-        <div className="nav-right" onClick={handleLang}>
-          <img src={navRight} alt="bu yerda rasm bor" loading="lazy" />
+        <div className="nav-center">
+          <ul>
+            <li>{t("home")}</li>
+            <li>{t("courses")}</li>
+            <li>{t("event")}</li>
+            <li>{t("about")}</li>
+            <li>{t("news")}</li>
+            <li>{t("certificates")}</li>
+            <li>{t("contactCenter")}</li>
+          </ul>
+          <div className="nav-right" onClick={handleLang}>
+            <img src={navRight} alt="bu yerda rasm bor" loading="lazy" />
+          </div>
         </div>
       </nav>
       <header>
@@ -113,7 +116,7 @@ function App() {
               {t("phone")}
             </span>
             <input type="text" placeholder={t("name")} />
-            <input type="text" placeholder={"profession"} />
+            <input type="text" placeholder={t("profession")} />
             <div className="box2-div">
               <input type="number" placeholder="+998" />
               <button>{t("submit")}</button>

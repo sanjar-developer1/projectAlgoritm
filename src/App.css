@@ -8,7 +8,7 @@
 }
 
 ::-webkit-scrollbar {
-  height: 8px; /* faqat horizontal */
+  height: calc(8 / 14.4 * 1vw); /* faqat horizontal */
 }
 
 ::-webkit-scrollbar-track {
@@ -17,7 +17,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(90deg, #252525, #252525); /* rangli thumb */
-  border-radius: 10px;
+  border-radius: calc(10 / 14.4 * 1vw);
 }
 
 input[type="number"] {
@@ -71,7 +71,7 @@ nav ul {
 
 nav ul li {
   border-radius: calc(10 / 14.4 * 1vw);
-  padding: calc(9 / 14.4 * 1vw) calc(20 / 14.4 * 1vw);
+  padding: calc(9 / 14.4 * 1vw) calc(10 / 14.4 * 1vw);
   font-family: Manrope;
   font-weight: 500;
   font-size: calc(19 / 14.4 * 1vw);
@@ -82,6 +82,10 @@ nav ul li {
 nav ul li:hover {
   background-color: #ffffff0d;
   transition: 0.2s;
+}
+.nav-center {
+  display: flex;
+  column-gap: calc(10 / 14.4 * 1vw);
 }
 
 .nav-right {
@@ -505,6 +509,7 @@ select {
   margin-top: calc(30 / 14.4 * 1vw);
 }
 .about-box {
+  width: calc(600 / 14.4 * 1vw) ;
   display: flex;
   column-gap: calc(20 / 14.4 * 1vw);
 }
@@ -764,6 +769,7 @@ select {
 .yoziling-center {
   display: flex;
   justify-content: space-between;
+  column-gap: calc(10 / 14.4 * 1vw);
 }
 
 .yoziling-top hr {
@@ -800,6 +806,7 @@ select {
 .yoziling-center-left {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   row-gap: calc(22 / 14.4 * 1vw);
 }
 .yoziling-center-left select {
